@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{pageTitle}}</title>
+  </head>
+  <body>
+    <!-- <ul>
+      {{#errors}}
+        <li>{{errors}}</li>
+      {{/errors}}
+    </ul> -->
+
+    <div class="todolistAdd">
+      <form class="" action="/" method="post">
+        <input type="text" name="todoInput" value="" placeholder="Add item todo">
+        <input type="submit" value="send">
+      </form>
+    </div>
+
+    {{#todoInput}}
+      <form class="" name="todo" action="/markAsCompleted" method="post">
+        <input type="hidden" name="name" value={{.}}>
+        <button type="submit" value="">Mark as complete</button>
+        <label>{{.}}</label>
+        <br>
+      </form>
+    {{/todoInput}}
+
+    <br>
+
+    <h1>Completed Tasks</h1>
+
+    {{#markAsCompleted}}
+      <div>
+        {{.}}
+      </div>
+    {{/markAsCompleted}}
+
+  </body>
+</html>
